@@ -1,0 +1,85 @@
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; background: #f4f4f4; }
+.container { width: 80%; max-width: 1200px; margin: auto; padding: 20px; }
+header { background: #333; color: #fff; padding: 1rem 0; }
+nav { display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 20px; }
+nav a { color: #fff; text-decoration: none; }
+
+.auth-form { background: #fff; padding: 20px; border-radius: 8px; max-width: 400px; margin: 20px auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+.auth-form input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+.btn { background: #28a745; color: white; border: none; padding: 10px 20px; cursor: pointer; width: 100%; border-radius: 4px; }
+.btn:hover { background: #218838; }
+.alert { color: #721c24; background-color: #f8d7da; padding: 10px; border-radius: 4px; }
+
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.hero h1 { font-size: 3rem; margin-bottom: 10px; }
+.btn-primary { background: #007bff; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; }
+
+/* Activity Grid */
+.section-header { text-align: center; margin: 40px 0; }
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+/* Card Styling */
+.activity-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.activity-card:hover { transform: translateY(-5px); }
+.card-image { position: relative; height: 200px; overflow: hidden;}
+.card-image img { width: 100%; height: 100%; object-fit: cover; }
+.category-tag {
+    position: absolute; top: 10px; left: 10px;
+    background: #28a745; color: white;
+    padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; z-index: 10;
+}
+.card-content { padding: 20px; }
+.card-footer {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-top: 15px; border-top: 1px solid #eee; padding-top: 15px;
+}
+.btn-outline { border: 1px solid #007bff; color: #007bff; padding: 8px 15px; text-decoration: none; border-radius: 4px; }
+
+.activity-detail { background: #fff; padding: 30px; border-radius: 12px; margin-top: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+.detail-content { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 20px; }
+.detail-image img { width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.category-tag-large { background: #28a745; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; }
+.btn-book { background: #007bff; color: white; border: none; padding: 15px 30px; font-size: 1.1rem; border-radius: 5px; cursor: pointer; width: 100%; transition: 0.3s; }
+.btn-book:hover { background: #0056b3; }
+.alert-info { background: #e1f5fe; padding: 15px; border-radius: 5px; border-left: 5px solid #01579b; }
+
+
+
+.bookings-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.bookings-table th, .bookings-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
+.bookings-table th { background: #f8f9fa; font-weight: 600; }
+.badge { background: #e8f5e9; color: #2e7d32; padding: 4px 10px; border-radius: 12px; font-size: 0.8rem; }
+.btn-small { text-decoration: none; color: #007bff; font-size: 0.9rem; margin-right: 10px; }
+.btn-cancel { text-decoration: none; color: #dc3545; font-size: 0.9rem; }
+.alert-success { background: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #c3e6cb; }
+.empty-state { text-align: center; padding: 50px; background: #fff; border-radius: 8px; }
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .detail-content { grid-template-columns: 1fr; }
+}
