@@ -11,3 +11,9 @@ function filterActivities() {
         })
         .catch(error => console.error('Error fetching activities:', error));
 }
+
+function clearFilters() {
+    document.getElementById('search-input').value = '';
+    document.getElementById('category-filter').value = '';
+    filterActivities(); // Trigger the AJAX refresh
+}

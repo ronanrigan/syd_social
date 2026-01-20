@@ -34,8 +34,9 @@ include 'includes/header.php';
                         <h3><?php echo htmlspecialchars($row['title']); ?></h3>
                         <p class="location"><i class="fas fa-map-marker-alt"></i> <?php echo htmlspecialchars($row['location']); ?></p>
                         <p class="date"><?php echo date('M d, Y', strtotime($row['activity_date'])); ?></p>
+                        <span class="slots"><?php echo $row['current_slots']; ?> spots left</span>
                         <div class="card-footer">
-                            <span class="slots"><?php echo $row['current_slots']; ?> spots left</span>
+                            
                             <a href="activity.php?id=<?php echo $row['activity_id']; ?>" class="btn-outline">View Details</a>
                         </div>
                     </div>

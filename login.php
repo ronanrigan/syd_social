@@ -1,4 +1,6 @@
 <?php
+// session_start must be at the very top of the file
+session_start(); 
 require_once 'includes/db.php';
 
 $message = "";
@@ -29,10 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
             exit();
         } else {
-            $message = "Invalid password.";
+            // Updated to generic error for security
+            $message = "Invalid email or password."; 
         }
     } else {
-        $message = "No account found with that email.";
+        $message = "Invalid email or password.";
     }
     $stmt->close();
 }
@@ -40,20 +43,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <?php include 'includes/header.php'; ?>
 
-<main class="container">
-    <h2>Login to Sydney Social</h2>
-    <?php if ($message) echo "<p class='alert'>$message</p>"; ?>
+<main class="auth-page-wrapper">
+    <div class="auth-card">
+        <h2>Welcome Back</h2>
+        <p class="subtitle">Log in to manage your Sydney social calendar.</p>
 
-    <form action="login.php" method="POST" class="auth-form">
-        <label>Email Address</label>
-        <input type="email" name="email" required placeholder="your@email.com">
+        <?php if ($message): ?>
+            <div class="alert alert-danger">
+                <i class="fas fa-exclamation-circle"></i> <?php echo $message; ?>
+            </div>
+        <?php endif; ?>
 
-        <label>Password</label>
-        <input type="password" name="password" required>
+        <form action="login.php" method="POST">
+            <div class="auth-group">
+                <label>Email Address</label>
+                <input type="email" name="email" class="auth-input" placeholder="alex@student.com" required>
+            </div>
+            
+            <div class="auth-group">
+                <label>Password</label>
+                <input type="password" name="password" class="auth-input" placeholder="••••••••" required>
+            </div>
 
-        <button type="submit" class="btn">Login</button>
-    </form>
-    <p>Don't have an account? <a href="register.php">Register here</a></p>
+            <button type="submit" class="btn-primary btn-auth">Login to Account</button>
+        </form>
+
+        <div class="auth-footer">
+            Don't have an account? <a href="register.php">Register here</a>
+        </div>
+    </div>
 </main>
 
 <?php include 'includes/footer.php'; ?>
