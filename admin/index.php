@@ -13,6 +13,7 @@ $result = $conn->query("SELECT * FROM activities ORDER BY activity_date DESC");
             <h2>Admin Dashboard</h2>
             <p class="text-light">Manage your platform's social and wellness activities.</p>
         </div>
+        <a href="users.php" class="btn-primary">Manage Users</a>
         <a href="activity_add.php" class="btn-primary">+ Add New Activity</a>
     </div>
 
